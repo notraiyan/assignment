@@ -1,32 +1,23 @@
-//assignment
-//id:160041037
-#include<iostream>
+#include <bits/stdc++.h>
 using namespace std;
-class base1{
-public:
-    int b;
-    base1(int n){
-        b=n;
-        cout<<"in base 1"<<endl;
-    }
-};
-class base2{
-public:
-    int b;
-    base2(int n){
-        b=n;
-        cout<<"in base 2"<<endl;
-    }
-};
-class derived: public base1,public base2{
-public:
-    int a,c;
-    derived(int m,int n):base1(m),base2(n){
-        a=m;
-        c=n;
-    }
 
-};
-int main(){
-    derived ob(20,10);
+int main()
+{
+    string s = "scott tiger mushroom";
+    string delimiter = " ";
+    int k=0,i,pos=0;
+    string token[s.length()];
+    for(i=0;i<s.length();i++)
+    {
+        if(s[i]==' ')
+        {
+            token[k++]=s.substr(0,i);
+            s.erase(0, i + 1);
+            i=-1;
+        }
+        else  if(i==s.length()-1)
+            token[k++]=s.substr(0,i+1);
+    }
+    for(i=k-1;i>=0;i--)
+        cout<<token[i]<<token[i].length()<<endl;
 }
